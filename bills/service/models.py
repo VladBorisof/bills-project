@@ -10,7 +10,7 @@ class Bills(models.Model):
     client_org = models.TextField()
     account_number = models.PositiveIntegerField()
     price = models.PositiveIntegerField()
-    date = models.DateTimeField()
+    date = models.DateField()
     service = models.TextField()
 
     class Meta:

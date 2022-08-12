@@ -1,4 +1,4 @@
-from rest_framework import filters, mixins, permissions, viewsets
+from rest_framework import filters, permissions, viewsets
 from rest_framework.pagination import LimitOffsetPagination
 
 from api.serializers import BillsSerializer
@@ -11,7 +11,7 @@ class BillsViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.AllowAny,)
     pagination_class = LimitOffsetPagination
     filter_backends = (filters.SearchFilter,)
-    search_fields = ('client_org',)
+    search_fields = ('client_org', 'client_name')
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(client_name=self.request.user)

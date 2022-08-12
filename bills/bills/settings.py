@@ -16,6 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'api',
+    'service',
+    'djoser'
 ]
 
 MIDDLEWARE = [
@@ -90,7 +93,8 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
+    ],
+    'DATE_INPUT_FORMATS': ["%d.%m.%Y"],
 }
 
 SIMPLE_JWT = {
